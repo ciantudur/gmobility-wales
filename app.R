@@ -19,14 +19,13 @@ library(cowplot) # To add logo
 library(ggplot2) # For charts
 library(dplyr) # For data transformation
 library(metathis) # For meta tags
-library(data.table) # For faster read times
 
 
 
 ## GLOBAL PARAMATERS -----------------------------------------------------------
 
 # Read csv data from Dropbox
-google_data <- fread("https://www.dropbox.com/s/m269kfh1oii89ad/google_data.csv?dl=1")
+google_data <- read.csv("https://www.dropbox.com/s/m269kfh1oii89ad/google_data.csv?dl=1")
 
 # Convert column to date format
 google_data$date <- as.Date(google_data$date)
