@@ -45,7 +45,7 @@
 
 The web application [app.R](https://github.com/ciantudur/gmobility-wales/blob/main/app.R) allows users to filter a dataset with mobility data for Wales and produce custom charts with the results.
 
-The dataset is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R). The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority and for each measure using a Kalman filter (provided that there are no more than 30 consequtive missing values). Google does not provide a data series for Wales, so this is derived using a population-weighted average of the values for the 22 Welsh local authorities. An ARIMA model is then used to remove seasonality. 
+The [dataset](https://github.com/ciantudur/gmobility-wales/blob/main/google_data.feather.R) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R). The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority and for each measure using a Kalman filter (provided that there are no more than 30 consequtive missing values). Google does not provide a data series for Wales, so this is derived using a [population-weighted average](https://github.com/ciantudur/gmobility-wales/blob/main/pop_weights_19.csv) of the values for the 22 Welsh local authorities. An ARIMA model is then used to remove seasonality. 
 
 ### Built With
 * [R](https://www.r-project.org/)
