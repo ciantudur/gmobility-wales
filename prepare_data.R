@@ -4,7 +4,6 @@
 ## prepare_data.R
 ## 22 November 2020
 ## Cian Siôn (SionC1@cardiff.ac.uk)
-## Version 1.0
 
 
 
