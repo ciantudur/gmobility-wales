@@ -47,7 +47,7 @@ The web application [app.R](https://github.com/ciantudur/gmobility-wales/blob/ma
 
 The source data for the web app can be accessed via Dropbox [here](https://www.dropbox.com/s/m269kfh1oii89ad/google_data.csv?dl=1). This is updated twice a week with the latest data from Google.
 
-This dataset is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R). The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority and for each measure using a Kalman filter (provided that there are no more than 20 consequtive missing values). Google does not provide a data series for Wales, so this is derived using a population-weighted average of the values for the 22 Welsh local authorities. An ARIMA model is then used to remove seasonality. 
+This dataset is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R). The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority and for each measure using a Kalman filter (provided that there are no more than 30 consequtive missing values). Google does not provide a data series for Wales, so this is derived using a population-weighted average of the values for the 22 Welsh local authorities. An ARIMA model is then used to remove seasonality. 
 
 ### Built With
 * [R](https://www.r-project.org/)
