@@ -67,7 +67,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Cian Tudur - [@ciantudur](https://twitter.com/ciantudur)
 
-Project Link: [https://github.com/ciantudur/gmobility](https://github.com/ciantudur/gmobility)
+Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/ciantudur/gmobility)
 
 
 
@@ -98,16 +98,16 @@ Project Link: [https://github.com/ciantudur/gmobility](https://github.com/ciantu
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ciantudur/gmobility.svg?style=flat-square
-[contributors-url]: https://github.com/ciantudur/gmobility/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/ciantudur/gmobility.svg?style=flat-square
-[forks-url]: https://github.com/ciantudur/gmobility/network/members
-[stars-shield]: https://img.shields.io/github/stars/ciantudur/gmobility.svg?style=flat-square
-[stars-url]: https://github.com/ciantudur/gmobility/stargazers
-[issues-shield]: https://img.shields.io/github/issues/ciantudur/gmobility.svg?style=flat-square
-[issues-url]: https://github.com/ciantudur/gmobility/issues
-[license-shield]: https://img.shields.io/github/license/ciantudur/gmobility.svg?style=flat-square
-[license-url]: https://github.com/ciantudur/gmobility/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/ciantudur/gmobility-wales.svg?style=flat-square
+[contributors-url]: https://github.com/ciantudur/gmobility-wales/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/ciantudur/gmobility-wales.svg?style=flat-square
+[forks-url]: https://github.com/ciantudur/gmobility-wales/network/members
+[stars-shield]: https://img.shields.io/github/stars/ciantudur/gmobility-wales.svg?style=flat-square
+[stars-url]: https://github.com/ciantudur/gmobility-wales/stargazers
+[issues-shield]: https://img.shields.io/github/issues/ciantudur/gmobility-wales.svg?style=flat-square
+[issues-url]: https://github.com/ciantudur/gmobility-wales/issues
+[license-shield]: https://img.shields.io/github/license/ciantudur/gmobility-wales.svg?style=flat-square
+[license-url]: https://github.com/ciantudur/gmobility-wales/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/cian-sion/
 
