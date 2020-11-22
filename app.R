@@ -52,7 +52,7 @@ ui <- fluidPage(
       title = "Wales Mobility Trends",
       description = "<meta> Explore the latest Google Mobility Trends for Wales",
       url = "https://gmobility.wfa.cymru",
-      image = "https://cdn-images-1.medium.com/fit/c/214/89/1*nWNzblWg6oK8-L9Jkn6fDA.png",
+      image = "https://cdn-images-1.medium.com/max/1200/1*SWYlxgSShBBtFeRSzGPTXg.png",
       image_alt = "An image for social meda cards",
       twitter_creator = "@ciantudur",
       twitter_card_type = "summary",
