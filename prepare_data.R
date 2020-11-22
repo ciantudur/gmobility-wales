@@ -75,7 +75,7 @@ imputed_data <- google_data_wales
 
 # For each column of data, and for each local authority, check if there are > 3
 # non-NA values to perform imputation. If true, impute missing data, unless
-# there are more than 20 consecutive NA values. If there are < 4 non-NA values
+# there are more than 30 consecutive NA values. If there are < 4 non-NA values
 # in total, leave all missing values as NAs.
 
 message("Imputing missing local authority data...")
@@ -84,7 +84,7 @@ for (j in 9:14) {
     if (sum(!is.na(imputed_data [imputed_data$sub_region_1 == i, j])) > 3) {
       imputed_data [imputed_data$sub_region_1 == i, j] <- na_kalman(
         imputed_data [imputed_data$sub_region_1 == i, j],
-        model = "auto.arima", smooth = TRUE, maxgap = 20
+        model = "auto.arima", smooth = TRUE, maxgap = 30
       )
     }
     else {
