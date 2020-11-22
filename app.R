@@ -3,7 +3,7 @@
 ## -------------------------------------------------------------------------- ##
 ## app.R
 ## 22 November 2020
-## Cian Siôn (SionC1@cardiff.ac.uk)
+## Cian SiÃ´n (SionC1@cardiff.ac.uk)
 
 
 
@@ -19,13 +19,16 @@ library(cowplot) # To add logo
 library(ggplot2) # For charts
 library(dplyr) # For data transformation
 library(metathis) # For meta tags
+library(feather) # For reading input data
+library(shinycssloaders) # For loading animation on chart
 
 
 
 ## GLOBAL PARAMATERS -----------------------------------------------------------
 
-# Read csv data from Dropbox
-google_data <- read.csv("https://www.dropbox.com/s/m269kfh1oii89ad/google_data.csv?dl=1")
+# Read csv data
+gd <- read_feather("google_data.feather")
+google_data <- as.data.frame(gd)
 
 # Convert column to date format
 google_data$date <- as.Date(google_data$date)
@@ -147,7 +150,7 @@ ui <- fluidPage(
 
     # Show a plot in main panel
     mainPanel(
-      plotOutput("distPlot"),
+      plotOutput("distPlot")%>% withSpinner(color="#ce0538"),
 
       # Dowload button for charts
       tags$div(
@@ -169,9 +172,10 @@ ui <- fluidPage(
         tags$br(),
         tags$a(href = "https://support.google.com/covid19-mobility/answer/9824897?hl=en&ref_topic=9822927", "How to interpret these results?"),
         tags$br(),
+        tags$br(),
         "This web app (v1.0) was produced by the ", tags$a(href = "https://www.cardiff.ac.uk/wales-governance-centre/publications/finance", "Wales Fiscal Analysis (WFA)"),
         " team using ",
-        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "– find the code and source data on ",
+        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "â find the code and source data on ",
         tags$a(href = "https://github.com/ciantudur/gmobility-wales/", "GitHub"),
       ),
 
