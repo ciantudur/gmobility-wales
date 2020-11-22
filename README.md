@@ -73,6 +73,7 @@ Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/
 * [Google Mobility Data](https://www.google.com/covid19/mobility/)
 * [cowplot package R](https://cran.r-project.org/web/packages/cowplot/index.html)
 * [dplyr package R](https://cran.r-project.org/web/packages/dplyr/index.html)
+* [feather package R](https://cran.r-project.org/web/packages/feather/index.html)
 * [ggplot2 package R](https://cran.r-project.org/web/packages/ggplot2/index.html)
 * [metathis package R](https://cran.r-project.org/web/packages/metathis/index.html)
 * [sf package R](https://cran.r-project.org/web/packages/sf/index.html)
@@ -86,6 +87,7 @@ Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/
 * [imputeTS package R](https://cran.r-project.org/web/packages/imputeTS/index.html)
 * [plyr package R](https://cran.r-project.org/web/packages/plyr/index.html)
 * [forecast package R](https://cran.r-project.org/web/packages/forecast/index.html)
+* [shinycssloaders package R](https://cran.r-project.org/web/packages/shinycssloaders/index.html)
 * [README Template](https://github.com/othneildrew/Best-README-Template/blob/master/README.md)
 
 
