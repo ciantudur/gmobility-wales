@@ -303,7 +303,7 @@ server <- function(input, output) {
       paste(input$measure, "_", input$area1, "_", input$area2, ".png", sep = "")
     },
     content = function(file) {
-      png(file, width = 8, units = "in", res = 900, height = 4.5)
+      png(file, width = 8, units = "in", res = 300, height = 4.5)
       print(vals$gg2)
       dev.off()
     }
