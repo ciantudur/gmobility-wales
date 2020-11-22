@@ -242,7 +242,7 @@ server <- function(input, output) {
         xlab("") +
         scale_y_continuous(labels = scales::percent_format()) +
         scale_x_date(
-          date_breaks = "2 month",
+          date_breaks = "1 month",
           date_minor_breaks = "1 month",
           date_labels = "%b",
           limits = c(input$dateRange[1], input$dateRange[2])
