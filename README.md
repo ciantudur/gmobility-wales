@@ -110,17 +110,3 @@ Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/
 [license-url]: https://github.com/ciantudur/gmobility-wales/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/cian-sion/
-
-
-
-
-# gmobility-wales
-Shiny web app that pulls Google Covid-19 mobility data to create user-friendly, seasonally-adjusted charts for Wales and Welsh local authorities.
-
-View the web app in action on https://gmobility.wfa.cymru
-
-app.R contains the code to the web app
-
-The underlying data for the app can be found here: https://www.dropbox.com/s/m269kfh1oii89ad/google_data.csv?dl=1
-
-The c
