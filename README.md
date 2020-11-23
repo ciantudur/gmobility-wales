@@ -32,7 +32,8 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-* [About the Project](#about-the-project)
+* [About the project](#about-the-project)
+* [How it works?](#how-it-works)
   * [Built With](#built-with)
 * [License](#license)
 * [Contact](#contact)
@@ -41,11 +42,26 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## About the project
+
+Wales Fiscal Analysis is a research programme within Cardiff University's Wales Governance Centre. This project enables members of the public, businesses and government officials to explore the latest mobility trends within Wales in a user-friendly manner.
+
+Improving accessibility to data on Covid-19 and the Welsh economy is a key objective of the research programme
+
+
+
+<!-- HOW IT WORKS? -->
+## How it works?
 
 The web application [app.R](https://github.com/ciantudur/gmobility-wales/blob/main/app.R) allows users to filter a dataset with mobility data for Wales and produce custom charts with the results.
 
-The dataset (available on request) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R). The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority using a Kalman filter (provided that there are no more than 30 consequtive missing values). Google does not provide a data series for Wales, so this is derived using a [population-weighted average](https://github.com/ciantudur/gmobility-wales/blob/main/pop_weights_19.csv) of the values for the 22 Welsh local authorities. An ARIMA model is then used to remove seasonality. 
+The dataset (available on request) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R).
+
+The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority using a Kalman filter (provided that there are no more than 30 consequtive missing values).
+
+Google does not provide a data series for Wales, so this is derived using a [population-weighted average](https://github.com/ciantudur/gmobility-wales/blob/main/pop_weights_19.csv) of the values for the 22 Welsh local authorities.
+
+An ARIMA model is then used to remove seasonality. 
 
 ### Built With
 * [R](https://www.r-project.org/)
