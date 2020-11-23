@@ -150,7 +150,7 @@ ui <- fluidPage(
 
     # Show a plot in main panel
     mainPanel(
-      plotOutput("distPlot")%>% withSpinner(color="#ce0538"),
+      plotOutput("distPlot") %>% withSpinner(color = "#ce0538"),
 
       # Dowload button for charts
       tags$div(
@@ -175,7 +175,7 @@ ui <- fluidPage(
         tags$br(),
         "This web app (v1.0) was produced by the ", tags$a(href = "https://www.cardiff.ac.uk/wales-governance-centre/publications/finance", "Wales Fiscal Analysis (WFA)"),
         " team using ",
-        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "â find the code and source data on ",
+        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "â<U+0080><U+0093> find the code and source data on ",
         tags$a(href = "https://github.com/ciantudur/gmobility-wales/", "GitHub"),
       ),
 
@@ -194,109 +194,104 @@ server <- function(input, output) {
   vals <- reactiveValues()
 
 
-  output$distPlot <- renderCachedPlot(
-    {
-      if (input$measure == "retail_and_recreation_percent_change_from_baseline") {
-        lab <- "Retail and recreation"
+  output$distPlot <- renderPlot({
+    if (input$measure == "retail_and_recreation_percent_change_from_baseline") {
+      lab <- "Retail and recreation"
+    } else {
+      if (input$measure == "grocery_and_pharmacy_percent_change_from_baseline") {
+        lab <- "Grocery & pharmacy"
       } else {
-        if (input$measure == "grocery_and_pharmacy_percent_change_from_baseline") {
-          lab <- "Grocery & pharmacy"
+        if (input$measure == "parks_percent_change_from_baseline") {
+          lab <- "Parks"
         } else {
-          if (input$measure == "parks_percent_change_from_baseline") {
-            lab <- "Parks"
+          if (input$measure == "transit_stations_percent_change_from_baseline") {
+            lab <- "Transit stations"
           } else {
-            if (input$measure == "transit_stations_percent_change_from_baseline") {
-              lab <- "Transit stations"
+            if (input$measure == "workplaces_percent_change_from_baseline") {
+              lab <- "Workplaces"
             } else {
-              if (input$measure == "workplaces_percent_change_from_baseline") {
-                lab <- "Workplaces"
+              if (input$measure == "residential_percent_change_from_baseline") {
+                lab <- "Residential"
               } else {
-                if (input$measure == "residential_percent_change_from_baseline") {
-                  lab <- "Residential"
-                } else {
-                }
               }
             }
           }
         }
       }
-
-      filtered_data <- dplyr::filter(google_data, country == input$area1 |
-        country == input$area2)
-      if (input$area1 != input$area2) {
-        filtered_data$country <- factor(filtered_data$country,
-          levels = c(input$area1, input$area2)
-        )
-      } else {
-
-      }
-
-      # Draw chart
-      gg <- ggplot(
-        data = subset(filtered_data, !is.na(input$measure)),
-        aes_string(
-          x = "date", y = input$measure,
-          group = "country",
-          color = "country"
-        )
-      ) +
-        geom_line(size = (1 / 20) * geom.text.size) +
-        ylab("% of baseline") +
-        xlab("") +
-        scale_y_continuous(labels = scales::percent_format()) +
-        scale_x_date(
-          date_breaks = "1 month",
-          date_minor_breaks = "1 month",
-          date_labels = "%b",
-          limits = c(input$dateRange[1], input$dateRange[2])
-        ) +
-        scale_color_manual(
-          values = c("#ce0538", "#373737"),
-          guide = guide_legend(reverse = FALSE)
-        ) +
-        theme_minimal() +
-        theme(
-          axis.text.x.bottom = element_text(
-            angle = 0,
-            hjust = 0.5,
-            vjust = 0.5,
-            size = theme.size
-          ),
-          axis.title.y = element_text(
-            colour = "#373737",
-            size = theme.size
-          ),
-          axis.text.y = element_text(size = theme.size),
-          axis.text = element_text(color = "#373737"),
-          legend.title = element_blank(),
-          legend.text = element_text(size = theme.size),
-          plot.title = element_text(face = "bold", size = geom.text.size),
-          plot.subtitle = element_text(color = "#373737", size = theme.size),
-          plot.caption = element_text(hjust = 0, size = (9 / 12) * geom.text.size)
-        ) +
-        labs(
-          title = "Google Mobility Reports",
-          subtitle = as.name(lab),
-          caption = "Source: WFA analysis of Google LLC (2020) Google Covid-19 Community Mobility
-             report. Data has been imputed and seasonally adjusted."
-        )
-
-
-      vals$gg <- gg
-      print(gg)
-
-      # Add logo
-      gg2 <- ggdraw() +
-        draw_image("wfalogob.png", x = 0.42, y = 0.44, scale = .13) +
-        draw_plot(gg)
-
-      vals$gg2 <- gg2
-      print(gg2)
-    },
-    cacheKeyExpr = {
-      c(input$measure, input$area1, input$area2, input$dateRange)
     }
-  )
+
+    filtered_data <- dplyr::filter(google_data, country == input$area1 |
+      country == input$area2)
+    if (input$area1 != input$area2) {
+      filtered_data$country <- factor(filtered_data$country,
+        levels = c(input$area1, input$area2)
+      )
+    } else {
+
+    }
+
+    # Draw chart
+    gg <- ggplot(
+      data = subset(filtered_data, !is.na(input$measure)),
+      aes_string(
+        x = "date", y = input$measure,
+        group = "country",
+        color = "country"
+      )
+    ) +
+      geom_line(size = (1 / 20) * geom.text.size) +
+      ylab("% of baseline") +
+      xlab("") +
+      scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+      scale_x_date(
+        date_breaks = "1 month",
+        date_minor_breaks = "1 month",
+        date_labels = "%b",
+        limits = c(input$dateRange[1], input$dateRange[2])
+      ) +
+      scale_color_manual(
+        values = c("#ce0538", "#373737"),
+        guide = guide_legend(reverse = FALSE)
+      ) +
+      theme_minimal() +
+      theme(
+        axis.text.x.bottom = element_text(
+          angle = 0,
+          hjust = 0.5,
+          vjust = 0.5,
+          size = theme.size
+        ),
+        axis.title.y = element_text(
+          colour = "#373737",
+          size = theme.size
+        ),
+        axis.text.y = element_text(size = theme.size),
+        axis.text = element_text(color = "#373737"),
+        legend.title = element_blank(),
+        legend.text = element_text(size = theme.size),
+        plot.title = element_text(face = "bold", size = geom.text.size),
+        plot.subtitle = element_text(color = "#373737", size = theme.size),
+        plot.caption = element_text(hjust = 0, size = (9 / 12) * geom.text.size)
+      ) +
+      labs(
+        title = "Google Mobility Reports",
+        subtitle = as.name(lab),
+        caption = "Source: WFA analysis of Google LLC (2020) Google Covid-19 Community Mobility
+             report. Data has been imputed and seasonally adjusted."
+      )
+
+
+    vals$gg <- gg
+    print(gg)
+
+    # Add logo
+    gg2 <- ggdraw() +
+      draw_image("wfalogob.png", x = 0.42, y = 0.44, scale = .13) +
+      draw_plot(gg)
+
+    vals$gg2 <- gg2
+    print(gg2)
+  })
 
 
 
