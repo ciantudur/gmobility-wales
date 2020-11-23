@@ -370,22 +370,22 @@ server <- function(input, output) {
   # Error for insufficient data
   output$error <- reactive({
     if (input$measure == "retail_and_recreation_percent_change_from_baseline") {
-      a <- 3
+      a <- 2
     } else {
       if (input$measure == "grocery_and_pharmacy_percent_change_from_baseline") {
-        a <- 4
+        a <- 3
       } else {
         if (input$measure == "parks_percent_change_from_baseline") {
-          a <- 5
+          a <- 4
         } else {
           if (input$measure == "transit_stations_percent_change_from_baseline") {
-            a <- 6
+            a <- 5
           } else {
             if (input$measure == "workplaces_percent_change_from_baseline") {
-              a <- 7
+              a <- 6
             } else {
               if (input$measure == "residential_percent_change_from_baseline") {
-                a <- 8
+                a <- 7
               } else {
               }
             }
