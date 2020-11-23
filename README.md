@@ -46,7 +46,7 @@
 
 Wales Fiscal Analysis is a research programme within Cardiff University's Wales Governance Centre. This project enables members of the public, businesses and government officials to explore the latest mobility trends within Wales in a user-friendly manner.
 
-Improving accessibility to data on Covid-19 and the Welsh economy is a key objective of the research programme
+Improving accessibility to data on Covid-19 and the Welsh economy is a key objective of the research programme.
 
 
 
