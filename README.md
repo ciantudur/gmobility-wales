@@ -55,7 +55,7 @@ Improving accessibility to data on Covid-19 and the Welsh economy is a key objec
 
 The web application [app.R](https://github.com/ciantudur/gmobility-wales/blob/main/app.R) allows users to filter a dataset with mobility data for Wales and produce custom charts with the results.
 
-The dataset (available on request) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R).
+The dataset [google_data.feather](https://github.com/ciantudur/gmobility-wales/blob/main/google_data.feather) (available in other formats on request) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R).
 
 The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority using a Kalman filter (provided that there are no more than 30 consequtive missing values).
 
