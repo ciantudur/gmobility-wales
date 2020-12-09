@@ -3,7 +3,7 @@
 ## -------------------------------------------------------------------------- ##
 ## app.R
 ## 22 November 2020
-## Cian SiÃ´n (SionC1@cardiff.ac.uk)
+## Cian Sion (SionC1@cardiff.ac.uk)
 
 
 
@@ -19,15 +19,15 @@ library(cowplot) # To add logo
 library(ggplot2) # For charts
 library(dplyr) # For data transformation
 library(metathis) # For meta tags
-library(feather) # For reading input data
 library(shinycssloaders) # For loading animation on chart
+library(fst) # For reading input data
 
 
 
 ## GLOBAL PARAMATERS -----------------------------------------------------------
 
 # Read csv data
-gd <- read_feather("google_data.feather")
+gd <- read.fst("google_data.fst")
 google_data <- as.data.frame(gd)
 
 # Convert column to date format
@@ -173,9 +173,9 @@ ui <- fluidPage(
         tags$a(href = "https://support.google.com/covid19-mobility/answer/9824897?hl=en&ref_topic=9822927", "How to interpret these results?"),
         tags$br(),
         tags$br(),
-        "This web app (v1.0) was produced by the ", tags$a(href = "https://www.cardiff.ac.uk/wales-governance-centre/publications/finance", "Wales Fiscal Analysis (WFA)"),
+        "This web app (v1.1) was produced by the ", tags$a(href = "https://www.cardiff.ac.uk/wales-governance-centre/publications/finance", "Wales Fiscal Analysis (WFA)"),
         " team using ",
-        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "â<U+0080><U+0093> find the code and source data on ",
+        tags$a(href = "https://shiny.rstudio.com/", "RShiny"), "- find the code and source data on ",
         tags$a(href = "https://github.com/ciantudur/gmobility-wales/", "GitHub"),
       ),
 
@@ -240,7 +240,7 @@ server <- function(input, output) {
       )
     ) +
       geom_line(size = (1 / 20) * geom.text.size) +
-      ylab("% of baseline") +
+      ylab("% of February baseline") +
       xlab("") +
       scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
       scale_x_date(
@@ -301,7 +301,7 @@ server <- function(input, output) {
       paste(input$measure, "_", input$area1, "_", input$area2, ".png", sep = "")
     },
     content = function(file) {
-      png(file, width = 8, units = "in", res = 300, height = 4.5)
+      png(file, width = 8, units = "in", res = 200, height = 4.5)
       print(vals$gg2)
       dev.off()
     }
