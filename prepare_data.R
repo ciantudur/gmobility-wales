@@ -235,7 +235,7 @@ areas <- c("Wales", "UK", "Blaenau Gwent", "Bridgend", "Cardiff", "Carmarthenshi
                "Wrexham")
 
 
-# Seasonally adjust data using ARIMA model
+# Seasonally adjust data 
 for (i in areas) {
   for (j in 2:7) {
     data_temp <- uk_wales_data_sa[uk_wales_data_sa$country == i, j]
