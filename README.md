@@ -4,7 +4,8 @@
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-
+:bangbang: | This project is no longer actively maintained.
+:---: | :---
 
 <!-- PROJECT LOGO -->
 <br />
@@ -19,11 +20,6 @@
     A Shiny web app that uses Google data to produce user-friendly, seasonally-adjusted mobility charts for Wales.
     <br />
     <br />
-    <a href="https://gmobility.wfa.cymru">View Website</a>
-    ·
-    <a href="https://github.com/ciantudur/gmobility-wales/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/ciantudur/gmobility-wales/issues">Request Feature</a>
   </p>
 </p>
 
@@ -33,10 +29,7 @@
 ## Table of Contents
 
 * [About the project](#about-the-project)
-* [How it works?](#how-it-works)
-  * [Built With](#built-with)
 * [License](#license)
-* [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
 
@@ -50,38 +43,10 @@ Improving accessibility to data on Covid-19 and the Welsh economy is a key objec
 
 
 
-<!-- HOW IT WORKS? -->
-## How it works?
-
-The web application [app.R](https://github.com/ciantudur/gmobility-wales/blob/main/app.R) allows users to filter a dataset with mobility data for Wales and produce custom charts with the results.
-
-The dataset [google_data.feather](https://github.com/ciantudur/gmobility-wales/blob/main/google_data.feather) (available in other formats on request) is compiled using an R script [prepare_data.R](https://github.com/ciantudur/gmobility-wales/blob/main/prepare_data.R).
-
-The script fetches the data from Google and filters for Welsh local authorities. It then imputes missing data for each local authority using a Kalman filter (provided that there are no more than 30 consequtive missing values).
-
-Google does not provide a data series for Wales, so this is derived using a [population-weighted average](https://github.com/ciantudur/gmobility-wales/blob/main/pop_weights_19.csv) of the values for the 22 Welsh local authorities.
-
-An ARIMA model is then used to remove seasonality. 
-
-### Built With
-* [R](https://www.r-project.org/)
-* [RShiny](https://shiny.rstudio.com/)
-
-
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Cian Tudur - [@ciantudur](https://twitter.com/ciantudur)
-
-Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/ciantudur/gmobility)
-
 
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -121,5 +86,3 @@ Project Link: [https://github.com/ciantudur/gmobility-wales](https://github.com/
 [stars-url]: https://github.com/ciantudur/gmobility-wales/stargazers
 [issues-shield]: https://img.shields.io/github/issues/ciantudur/gmobility-wales.svg?style=flat-square
 [issues-url]: https://github.com/ciantudur/gmobility-wales/issues
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/cian-sion/
